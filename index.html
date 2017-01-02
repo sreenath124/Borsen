@@ -21,7 +21,13 @@
                         <i class="fa fa-facebook icons" aria-hidden="true"></i>
                     </a>
                     <a href="">
-                        <button class="logout">Logout</button>
+                        <span class="user">
+                            <img class="login_avatar" src="assets/login_avatar.png" alt="login_avatar" >
+                            <span class="user_name">BRUHN Grafisk  handverk</span>
+                        </span>
+                    </a>
+                    <a href="">
+                        <button class="logout">Log out</button>
                     </a>
                     <a href="">
                         <i class="fa fa-pencil icons" aria-hidden="true"></i>
@@ -50,7 +56,7 @@
                 </h1>
                 <h2>Business</h2>
                 <form id="business_form" action="">
-                    <section  id="personal_details" class="left">
+                    <section id="personal_details" class="left">
                         <div id="cvr">
                             <label>CVR</label>
                             <input class="cvr_input" type="text" name="cvr" maxlength=1 placeholder="0">
@@ -67,7 +73,7 @@
                         <input class="left" type="text" name="last_name" placeholder="Last Name">
                         <input class="left" type="text" name="address" placeholder="Adress">
                         <input class="left" type="text" name="zip" placeholder="ZIP Code">
-                        <input class="left" type="text" name="city" placeholder="city">
+                        <input class="left" type="text" name="city" placeholder="City">
                         <input class="left" type="text" name="email" placeholder="E-mail">
                         <input class="left" type="text" name="confirm_email" placeholder="Confirm E-mail">
                         <input class="left" type="password" name="password" placeholder="Password">
@@ -77,73 +83,75 @@
                         <h3>where did you hear about ITSB.DK</h3>
                         <ul>
                             <li>
-                                <input type="checkbox" name="Linkedin">
-                                <label> Linkedin</label>
+                                <input type="checkbox" name="Linkedin" id="linkedin">
+                                <label class="label" for="linkedin"> Linkedin</label>
                             </li>
                             <li>
-                                <input type="checkbox" name="Internettet">
-                                <label>Internettet</label>
+                                <input type="checkbox" name="Internettet" id="internettet">
+                                <label class="label" for="internettet"> Internettet</label>
                             </li>
                             <li>
-                                <input type="checkbox" name="Facebook">
-                                <label>Facebook</label>
+                                <input type="checkbox" name="Facebook" id="facebook">
+                                <label class="label" for="facebook">Facebook</label>
                             </li>
                             <li>
-                                <input type="checkbox" name="Collague">
-                                <label>Collague</label>
+                                <input type="checkbox" name="Collague" id="collague">
+                                <label class="label" for="collague">Collague</label>
                             </li>
                             <li>
-                                <input type="checkbox" name="Twitter">
-                                <label>Twitter</label>
+                                <input type="checkbox" name="Twitter" id="twitter">
+                                <label class="label" for="twitter">Twitter</label>
                             </li>
                             <li>
-                                <input type="checkbox" name="Magazines">
-                                <label>Magazines</label>
+                                <input type="checkbox" name="Magazines" id="magazines">
+                                <label class="label" for="magazines">Magazines</label>
                             </li>
                             <li>
-                                <input type="checkbox" name="Other">
-                                <label>Other</label>
+                                <input type="checkbox" name="Other" id="others">
+                                <label class="label" for="others">Other</label>
                             </li>
                             <li>
-                                <input type="checkbox" name="Network">
-                                <label>Network</label>
+                                <input type="checkbox" name="Network" id="network">
+                                <label class="label" for="network">Network</label>
                             </li>
                         </ul>
                     </section>
                     <section>
                         <h3>Hunter/ Farmer</h3>
+                        <span class="hunter">Hunter</span>
+                        <span class="farmer">Farmer</span>
                         <input type="range" name="" id="">
                     </section>
                     <section class="solutions">
                         <h3>Solutions</h3>
                         <ul>
                             <li>
-                                <input type="checkbox" name="ERP">
-                                <label>ERP</label>
+                                <input type="checkbox" name="ERP" id="erp">
+                                <label class="label" for="erp"> ERP</label>
                             </li>
                             <li>
-                                <input type="checkbox" name="CRM">
-                                <label>CRM</label>
+                                <input type="checkbox" name="CRM" id="crm">
+                                <label class="label" for="crm">CRM</label>
                             </li>
                             <li>
-                                <input type="checkbox" name="Hosting">
-                                <label>Hosting</label>
+                                <input type="checkbox" name="Hosting" id="hosting">
+                                <label class="label" for="hosting">Hosting</label>
                             </li>
                             <li>
-                                <input type="checkbox" name="Drift">
-                                <label>Drift</label>
+                                <input type="checkbox" name="Drift" id="drift">
+                                <label class="label" for="drift">Drift</label>
                             </li>
                             <li>
-                                <input type="checkbox" name="Industry Solutions">
-                                <label>Industry solutions</label>
+                                <input type="checkbox" name="Industry Solutions" id="industry_solutions">
+                                <label class="label" for=industry_solutions>Industry solutions</label>
                             </li>
                             <li>
-                                <input type="checkbox" name="Infrastructure">
-                                <label>Infrastructure</label>
+                                <input type="checkbox" name="Infrastructure" id="infrastructure">
+                                <label class="label" for="infrastructure">Infrastructure</label>
                             </li>
                             <li>
-                                <input type="checkbox" name="Other">
-                                <label>Other</label>
+                                <input type="checkbox" name="Other" id="other_solution">
+                                <label class="label" for="other_solution">Other</label>
                             </li>
                         </ul>
                     </section>
@@ -151,52 +159,52 @@
                         <h3>Industry</h3>
                         <ul>
                             <li>
-                                <input type="checkbox" name="Municipality" />
-                                <label>Municipality</label>
+                                <input type="checkbox" name="Municipality" id="Municipality">
+                                <label class="label" for="Municipality">Municipality</label>
                             </li>
                             <li>
-                                <input type="checkbox" name="State" />
-                                <label>State</label>
+                                <input type="checkbox" name="State" id="State">
+                                <label class="label" for="State">State</label>
                             </li>
                             <li>
-                                <input type="checkbox" name="Media" />
-                                <label>Media</label>
+                                <input type="checkbox" name="Media" id="Media">
+                                <label class="label" for="Media">Media</label>
                             </li>
                             <li>
-                                <input type="checkbox" name="Industry" />
-                                <label>Industry</label>
+                                <input type="checkbox" name="Industry" id="Industry">
+                                <label class="label" for="Industry">Industry</label>
                             </li>
                             <li>
-                                <input type="checkbox" name="Service" />
-                                <label>Service</label>
+                                <input type="checkbox" name="Service" id="Service">
+                                <label class="label" for="Service">Service</label>
                             </li>
                             <li>
-                                <input type="checkbox" name="Consultant, association, educ" />
-                                <label>Consultant, association, educ.</label>
+                                <input type="checkbox" name="Consultant, association, educ" id="Consultant">
+                                <label class="label" for="Consultant">Consultant, association, educ.</label>
                             </li>
                             <li>
-                                <input type="checkbox" name="Detail" />
-                                <label>Detail</label>
+                                <input type="checkbox" name="Detail" id="Detail">
+                                <label class="label" for="Detail">Detail</label>
                             </li>
                             <li>
-                                <input type="checkbox" name="Transport/ Logistics" />
-                                <label>Transport/ Logistics</label>
+                                <input type="checkbox" name="Transport/ Logistics" id="Transport">
+                                <label class="label" for="Transport">Transport/ Logistics</label>
                             </li>
                             <li>
-                                <input type="checkbox" name="Financial" />
-                                <label>Financial</label>
+                                <input type="checkbox" name="Financial" id="Financial">
+                                <label class="label" for="Financial">Financial</label>
                             </li>
                             <li>
-                                <input type="checkbox" name="Telekom" />
-                                <label>Telekom</label>
+                                <input type="checkbox" name="Telekom" id="Telekom">
+                                <label class="label" for="Telekom">Telekom</label>
                             </li>
                             <li>
-                                <input type="checkbox" name="Medicinal" />
-                                <label>Medicinal</label>
+                                <input type="checkbox" name="Medicinal" id="Medicinal">
+                                <label class="label" for="Medicinal">Medicinal</label>
                             </li>
                             <li>
-                                <input type="checkbox" name="Other" />
-                                <label>Other</label>
+                                <input type="checkbox" name="Other" id="other_industry">
+                                <label class="label" for="other_industry">Other</label>
                             </li>
                         </ul>
                     </section>
@@ -204,28 +212,28 @@
                         <h3>Sales</h3>
                         <ul>
                             <li>
-                                <input type="checkbox" name="Direct">
-                                <label>Direct</label>
+                                <input type="checkbox" name="Direct" id="direct">
+                                <label class="label" for="direct">Direct</label>
                             </li>
                             <li>
-                                <input type="checkbox" name="Partner sales">
-                                <label>Partner Sales</label>
+                                <input type="checkbox" name="Partner sales" id="partner_sales">
+                                <label class="label" for="partner_sales"> Partner Sales</label>
                             </li>
                             <li>
-                                <input type="checkbox" name="Agent sales">
-                                <label>Agent Sales</label>
+                                <input type="checkbox" name="Agent sales" id="agent_sales">
+                                <label class="label" for="agent_sales">Agent Sales</label>
                             </li>
                             <li>
-                                <input type="checkbox" name="Dealer Sales">
-                                <label>Dealer Sales</label>
+                                <input type="checkbox" name="Dealer Sales" id="dealer_sales">
+                                <label class="label" for="dealer_sales">Dealer Sales</label>
                             </li>
                             <li>
-                                <input type="checkbox" name="Distribution Sales">
-                                <label>Distribution Sales</label>
+                                <input type="checkbox" name="Distribution Sales" id="distribution_sales">
+                                <label class="label" for="distribution_sales">Distribution Sales</label>
                             </li>
                             <li>
-                                <input type="checkbox" name="Other">
-                                <label>other</label>
+                                <input type="checkbox" name="Other" id="other">
+                                <label class="label" for="other">other</label>
                             </li>
                         </ul>
                     </section>
@@ -233,186 +241,214 @@
                         <h3>Audience</h3>
                         <div>
                             <div class="male_icon">
-                                <i class="fa fa-male" aria-hidden="true"></i>
-                                <i class="fa fa-male" aria-hidden="true"></i>
-                                <i class="fa fa-male" aria-hidden="true"></i>
+                                <i class="fa fa-male fa-2x" aria-hidden="true"></i>
+                                <i class="fa fa-male fa-2x" aria-hidden="true"></i>
+                                <i class="fa fa-male fa-2x" aria-hidden="true"></i>
                             </div>
-                            <input type="checkbox" name="micro" id="">Micro businesses (less than 10 employees)
+                            <input type="checkbox" name="micro" id="micro_business">
+                            <label class="label" for="micro_business"> Micro businesses (less than 10 employees)</label>
                         </div>
                         <div>
                             <div class="male_icon">
-                                <i class="fa fa-male" aria-hidden="true"></i>
-                                <i class="fa fa-male" aria-hidden="true"></i>
-                                <i class="fa fa-male" aria-hidden="true"></i>
-                                <i class="fa fa-male" aria-hidden="true"></i>
-                                <i class="fa fa-male" aria-hidden="true"></i>
+                                <i class="fa fa-male fa-2x" aria-hidden="true"></i>
+                                <i class="fa fa-male fa-2x" aria-hidden="true"></i>
+                                <i class="fa fa-male fa-2x" aria-hidden="true"></i>
+                                <i class="fa fa-male fa-2x" aria-hidden="true"></i>
+                                <i class="fa fa-male fa-2x" aria-hidden="true"></i>
                             </div>
-                            <input type="checkbox" name="small" id="">Small businesses (less than 50 employees)
+                            <input type="checkbox" name="small" id="small_business">
+                            <label class="label" for="small_business"> Small businesses (less than 50 employees)</label>
                         </div>
                         <div>
                             <div class="male_icon">
-                                <i class="fa fa-male" aria-hidden="true"></i>
-                                <i class="fa fa-male" aria-hidden="true"></i>
-                                <i class="fa fa-male" aria-hidden="true"></i>
-                                <i class="fa fa-male" aria-hidden="true"></i>
-                                <i class="fa fa-male" aria-hidden="true"></i>
-                                <i class="fa fa-male" aria-hidden="true"></i>
-                                <i class="fa fa-male" aria-hidden="true"></i>
-                                <i class="fa fa-male" aria-hidden="true"></i>
+                                <i class="fa fa-male fa-2x" aria-hidden="true"></i>
+                                <i class="fa fa-male fa-2x" aria-hidden="true"></i>
+                                <i class="fa fa-male fa-2x" aria-hidden="true"></i>
+                                <i class="fa fa-male fa-2x" aria-hidden="true"></i>
+                                <i class="fa fa-male fa-2x" aria-hidden="true"></i>
+                                <i class="fa fa-male fa-2x" aria-hidden="true"></i>
+                                <i class="fa fa-male fa-2x" aria-hidden="true"></i>
+                                <i class="fa fa-male fa-2x" aria-hidden="true"></i>
                             </div>
-                            <input type="checkbox" name="meduium" id="">Medium businesses (less than 250 employees)
+                            <input type="checkbox" name="medium" id="medium_business">
+                            <label class="label" for="medium_business"> Medium businesses (less than 250 employees)</label>
                         </div>
                         <div>
                             <div>
-                                <i class="fa fa-male" aria-hidden="true"></i>
-                                <i class="fa fa-male" aria-hidden="true"></i>
-                                <i class="fa fa-male" aria-hidden="true"></i>
-                                <i class="fa fa-male" aria-hidden="true"></i>
-                                <i class="fa fa-male" aria-hidden="true"></i>
-                                <i class="fa fa-male" aria-hidden="true"></i>
-                                <i class="fa fa-male" aria-hidden="true"></i>
-                                <i class="fa fa-male" aria-hidden="true"></i>
-                                <i class="fa fa-male" aria-hidden="true"></i>
-                                <i class="fa fa-male" aria-hidden="true"></i>
-                                <i class="fa fa-male" aria-hidden="true"></i>
-                                <i class="fa fa-male" aria-hidden="true"></i>
+                                <i class="fa fa-male fa-2x" aria-hidden="true"></i>
+                                <i class="fa fa-male fa-2x" aria-hidden="true"></i>
+                                <i class="fa fa-male fa-2x" aria-hidden="true"></i>
+                                <i class="fa fa-male fa-2x" aria-hidden="true"></i>
+                                <i class="fa fa-male fa-2x" aria-hidden="true"></i>
+                                <i class="fa fa-male fa-2x" aria-hidden="true"></i>
+                                <i class="fa fa-male fa-2x" aria-hidden="true"></i>
+                                <i class="fa fa-male fa-2x" aria-hidden="true"></i>
+                                <i class="fa fa-male fa-2x" aria-hidden="true"></i>
+                                <i class="fa fa-male fa-2x" aria-hidden="true"></i>
+                                <i class="fa fa-male fa-2x" aria-hidden="true"></i>
+                                <i class="fa fa-male fa-2x" aria-hidden="true"></i>
                             </div>
-                            <input type="checkbox" name="big" id="">Big businesses (more than 10k employees)
+                            <input type="checkbox" name="big" id="big_business">
+                            <label class="label" for="big_business"> Big businesses (more than 10k employees)</label>
                         </div>
                     </section>
                     <section class="accordian_sec">
                         <h3>Export</h3>
                         <div id="world_map" style="width: 100%; height: 400px;"></div>
                         <div class="accordian">
-                            <button id="asia" class="accr_button">Asia <i class="fa fa-angle-double-down down_arrow" aria-hidden="true"></i>
+                            <button id="asia" class="accr_button">Asia <i class="fa fa-angle-double-down fa-2x down_arrow" aria-hidden="true"></i>
                             </button>
                             <div id="AS" class="accr_hidden asia">
                                 <ul>
                                     <li>
                                         <img class="flag" src="assets/india_flag.png" alt="india">
-                                        <input type="checkbox" name="" id="india">India
+                                        <input type="checkbox" name="" id="india"  checked="false">
+                                        <label class="label" for="india">India</label>
                                     </li>
                                     <li>
-                                        <img class="flag" src="assets/china_flag.png" alt="china">
-                                        <input type="checkbox" name="" id="china">China
+                                         <img class="flag" src="assets/china_flag.png" alt="china">
+                                            <input type="checkbox" name="" id="china" checked="false">
+                                            <label class="label" for="china">China</label>
                                     </li>
                                     <li>
                                         <img class="flag" src="assets/russia_flag.jpg" alt="russia">
-                                        <input type="checkbox" name="" id="russia">Russia
+                                        <input type="checkbox" name="" id="russia" checked="false">
+                                        <label class="label" for="russia">Russia</label>
                                     </li>
                                     <li>
                                         <img class="flag" src="assets/afganistan_flag.png" alt="afganistan">
-                                        <input type="checkbox" name="" id="afganistan">Afganistan
+                                        <input type="checkbox" name="" id="afganistan" checked="false">
+                                        <label class="label" for="afganistan">Afganistan</label>
                                     </li>
                                     <li>
                                         <img class="flag" src="assets/bahrain_flag.png" alt="bahrain">
-                                        <input type="checkbox" name="" id="bahrain">Bahrain
+                                        <input type="checkbox" name="" id="bahrain" checked="false">
+                                        <label class="label" for="bahrain">Bahrain</label>
                                     </li>
                                     <li>
                                         <img class="flag" src="assets/bangladesh_flag.jpg" alt="bangladesh">
-                                        <input type="checkbox" name="" id="bangladesh">Bangladdesh
+                                        <input type="checkbox" name="" id="bangladesh" checked="false">
+                                        <label class="label" for="bangladesh">Bangladdesh</label>
                                     </li>
                                 </ul>
                             </div>
-                            <button id="north_america" class="accr_button">North America <i class="fa fa-angle-double-down down_arrow" aria-hidden="true"></i>
+                            <button id="north_america" class="accr_button">North America <i class="fa fa-angle-double-down fa-2x down_arrow" aria-hidden="true"></i>
                             </button>
                             <div id="NA" class="accr_hidden n_america">
                                 <ul>
                                     <li>
                                         <img class="flag" src="assets/us_flag.png" alt="usa">
-                                        <input type="checkbox" name="" id="">USA
+                                        <input type="checkbox" name="" id="usa"  checked="false">
+                                        <label class="label" for="usa"> USA
                                     </li>
                                     <li>
                                         <img class="flag" src="assets/mexico_flag.png" alt="mexico">
-                                        <input type="checkbox" name="" id="">Mexico
+                                        <input type="checkbox" name="" id="mexico" checked="false">
+                                        <label class="label" for="mexico"> Mexico
                                     </li>
                                     <li>
                                         <img class="flag" src="assets/haiti_flag.png" alt="haiti">
-                                        <input type="checkbox" name="" id="">Haiti
+                                        <input type="checkbox" name="" id="haiti" checked="false">
+                                        <label class="label" for="haiti"> Haiti
                                     </li>
                                     <li>
                                         <img class="flag" src="assets/canada_flag.png" alt="canada">
-                                        <input type="checkbox" name="" id="">Canada
+                                        <input type="checkbox" name="" id="canada" checked="false">
+                                        <label class="label" for="canada"> Canada
                                     </li>
                                     <li>
                                         <img class="flag" src="assets/cuba_flag.png" alt="cuba">
-                                        <input type="checkbox" name="" id="">Cuba
+                                        <input type="checkbox" name="" id="cuba" checked="false">
+                                        <label class="label" id="cuba"> Cuba
                                     </li>
                                     <li>
                                         <img class="flag" src="assets/jamaica_flag.jpg" alt="jamaica">
-                                        <input type="checkbox" name="" id="">Jamaica
+                                        <input type="checkbox" name="" id="jamaica" checked="false">
+                                        <label class="label" for="jamaica"> Jamaica
                                     </li>
                                 </ul>
                             </div>
-                            <button id="south_america" class="accr_button">South America <i class="fa fa-angle-double-down down_arrow" aria-hidden="true"></i>
+                            <button id="south_america" class="accr_button">South America <i class="fa fa-angle-double-down fa-2x down_arrow" aria-hidden="true"></i>
                             </button>
                             <div id="SA" class="accr_hidden s_america">
                                 <ul>
                                     <li>
-                                        <img class="flag" src="assets/argentina_flag.jpg" alt="argentina">
-                                        <input type="checkbox" name="" id="">Argentina
+                                        <img class="flag" src="assets/argentina_flag.jpg" alt="argentina" checked="false">
+                                        <input type="checkbox" name="" id="argentina">
+                                        <label class="label" for="argentina"> Argentina
                                     </li>
                                     <li>
-                                        <img class="flag" src="assets/brazil_flag.png" alt="brazil">
-                                        <input type="checkbox" name="" id="">Brazil
+                                        <img class="flag" src="assets/brazil_flag.png" alt="brazil" checked="false">
+                                        <input type="checkbox" name="" id="brazil">
+                                        <label class="label" for="brazil"> Brazil
                                     </li>
                                     <li>
-                                        <img class="flag" src="assets/chile_flag.png" alt="Chile">
-                                        <input type="checkbox" name="" id="">Chile
+                                        <img class="flag" src="assets/chile_flag.png" alt="Chile" checked="false">
+                                        <input type="checkbox" name="" id="chile">
+                                        <label class="label" for="chile"> Chile
                                     </li>
                                 </ul>
                             </div>
-                            <button id="europe" class="accr_button">Europe <i class="fa fa-angle-double-down down_arrow" aria-hidden="true"></i>
+                            <button id="europe" class="accr_button">Europe <i class="fa fa-angle-double-down down_arrow fa-2x" aria-hidden="true"></i>
                             </button>
                             <div id="EU" class="accr_hidden europe">
                                 <ul>
                                     <li>
                                         <img class="flag" src="assets/germany_flag.png" alt="geramy">
-                                        <input type="checkbox" name="" id="">Germany
+                                        <input type="checkbox" name="" id="geramy" checked="false">
+                                        <label class="label" for="geramy"> Germany</label>
                                     </li>
                                     <li>
                                         <img class="flag" src="assets/uk_flag.png" alt="UK">
-                                        <input type="checkbox" name="" id="">United Kingdom
+                                        <input type="checkbox" name="" id="uk" checked="false">
+                                        <label class="label" for="uk">United Kingdom</label>
                                     </li>
                                     <li>
                                         <img class="flag" src="assets/italy_flag.png" alt="Italy">
-                                        <input type="checkbox" name="" id="">Italy
+                                        <input type="checkbox" name="" id="italy" checked="false ">
+                                        <label class="label" for="italy"> Italy</label>
                                     </li>
                                 </ul>
                             </div>
-                            <button id="africa" class="accr_button">Africa <i class="fa fa-angle-double-down down_arrow" aria-hidden="true"></i>
+                            <button id="africa" class="accr_button">Africa <i class="fa fa-angle-double-down fa-2x down_arrow" aria-hidden="true"></i>
                             </button>
                             <div id="AF" class="accr_hidden africa">
                                 <ul>
                                     <li>
                                         <img class="flag" src="assets/kenya_flag.jpg" alt="kenya">
-                                        <input type="checkbox" name="" id="">Kenya
+                                        <input type="checkbox" name="" id="kenya" checked="false ">
+                                            <label class="label" for="kenya">Kenya</label>
                                     </li>
                                     <li>
                                         <img class="flag" src="assets/egypt_flag.png" alt="egypt">
-                                        <input type="checkbox" name="" id="">Egypt
+                                        <input type="checkbox" name="" id="egypt" checked="false ">
+                                            <label class="label" for="egypt">Egypt</label>
                                     </li>
                                     <li>
                                         <img class="flag" src="assets/algeria_flag.png" alt="Algeria">
-                                        <input type="checkbox" name="" id="">Algeria
+                                        <input type="checkbox" name="" id="algeria" checked="false ">
+                                            <label class="label" for="algeria">Algeria</label>
                                     </li>
                                 </ul>
                             </div>
-                            <button id="oceania" class="accr_button">Oceania <i class="fa fa-angle-double-down down_arrow" aria-hidden="true"></i>
+                            <button id="oceania" class="accr_button">Oceania <i class="fa fa-angle-double-down fa-2x down_arrow" aria-hidden="true"></i>
                             </button>
                             <div id="OC" class="accr_hidden oceania">
                                 <ul>
                                     <li>
                                         <img class="flag" src="assets/australia_flag.png" alt="australia">
-                                        <input type="checkbox" name="" id="">Australia
+                                        <input type="checkbox" name="" id="australia" checked="false">
+                                        <label class="label" for="australia">Australia</label>
                                     </li>
                                     <li>
                                         <img class="flag" src="assets/fiji_flag.png" alt="fiji">
-                                        <input type="checkbox" name="" id="">Fiji
+                                        <input type="checkbox" name="" id="fiji" checked="false">
+                                        <label class="label" for="fiji">Fiji</label>
                                     </li>
                                     <li>
                                         <img class="flag" src="assets/newzealand_flag.png" alt="newzealand">
-                                        <input type="checkbox" name="" id="">New Zealand
+                                        <input type="checkbox" name="" id="newzealand" checked="false">
+                                        <label class="label" for="newzealand">New Zealand</label>
                                     </li>
                                 </ul>
                             </div>
@@ -421,37 +457,37 @@
                         <button class="sign_up">Sign Up
                             <p>AND MAKE A REQUEST</p>
                         </button>
-                       <div class="windup_que">
+                        <div class="windup_que">
                             <p>
-                            Do you wish to request an IT-sales-man, adn are you already registered?
-                        </p>
-                        <p>
-                            <a class="already_login" href="">Log in Here</a>
-                        </p>
-                       </div>
+                                Do you wish to request an IT-sales-man, adn are you already registered?
+                            </p>
+                            <p>
+                                <a class="already_login" href="">Log in Here</a>
+                            </p>
+                        </div>
                     </section>
                 </form>
             </div>
             <div class="flyout">
-            <label>Name:</label>
-            <p class="values" id="name"></p>
-            <label>Business Name:</label>
-            <p class="values" id="business_name"></p>
-            <label >Email:</label>
-            <p class="values" id="email"></p>
-            <label for="">Industry:</label>
-            <p class="values" id="industry"></p>
-            <label for="">Sales:</label>
-            <p class="values" id="sales"></p>
-            <label for="">Solutions:</label>
-            <p class="values" id="solutions"></p>
-            <label for="">Audience:</label>
-            <p class="values" id="audience"></p>
-            <label for="">Export:</label>
-            <p class="values" id="export_to"></p>
+                <label>Name:</label>
+                <p class="values" id="name"></p>
+                <label>Business Name:</label>
+                <p class="values" id="business_name"></p>
+                <label>Email:</label>
+                <p class="values" id="email"></p>
+                <label for="">Industry:</label>
+                <p class="values" id="industry"></p>
+                <label for="">Sales:</label>
+                <p class="values" id="sales"></p>
+                <label for="">Solutions:</label>
+                <p class="values" id="solutions"></p>
+                <label for="">Audience:</label>
+                <p class="values" id="audience"></p>
+                <label for="">Export:</label>
+                <p class="values" id="export_to"></p>
                 <div class="flyout_btn">
                     <p class="flyout_title">
-                    <i class="fa fa-angle-double-left flyout_arrow" aria-hidden="true"></i>Click here to see entered values</p>
+                        <i class="fa fa-angle-double-left flyout_arrow" aria-hidden="true"></i>REGISTERED DATA</p>
                 </div>
             </div>
         </main>
@@ -492,8 +528,15 @@
                 <div class="contact">
                     <section class="contact_detail">
                         <h3>Contact</h3>
-                        <p><span>Mail:</span>kontakt&copy;itsb.dk</p>
-                        <p><span>Adresse:</span>Mejlgade 31, 8000 Arhus C</p>
+                        <p>
+                            <span>Mail:</span>
+                            <span>kontakt&copy;itsb.dk</span>
+                        </p>
+                        <p>
+                            <span>Adresse:</span>
+                            <span>
+                            Mejlgade 31, 8000 Arhus C
+                        </span></p>
                     </section>
                     <section class="contact_form">
                         <h3>Send us message</h3>

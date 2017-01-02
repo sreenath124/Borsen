@@ -8,13 +8,13 @@ $(document).ready(function() {
         borderWidth: 1,
         regionStyle: {
             initial: {
-                fill: '#128da7'
+                fill: '#B0B1B5'
             },
             hover: {
                 fill: "#A0D1DC"
             },
             selected: {
-                fill: "#010101"
+                fill: "#2A3F52"
             }
         },
         enableZoom: false,
@@ -31,7 +31,6 @@ $(document).ready(function() {
         zoomOnScroll: false,
         onRegionClick: function(event, code, region) {
             var map = $('#world_map').vectorMap('get', 'mapObject');
-            console.log(map.getRegionName(code));
             switch (code) {
                 case 'AS':
                     $('#AS').toggleClass('accr_visible');
@@ -61,6 +60,7 @@ $(document).ready(function() {
     	e.preventDefault();
        			    var map = $('#world_map').vectorMap('get', 'mapObject');
                  var id = this.id;
+
                  if(id == 'asia') {
                  	map.setSelectedRegions('AS');
                  }
@@ -79,7 +79,8 @@ $(document).ready(function() {
                  else if(id == 'oceania') {
                  	map.setSelectedRegions('OC');
                  }
-                  
+           $(this).toggleClass('accr_button_active'); 
+           $(this).find('input').attr('checked', true);
         $(this).next('.accr_hidden').toggleClass('accr_visible');
 
     });
@@ -113,9 +114,6 @@ $(document).ready(function() {
     		sales_type.push($(this).attr('name'));
     	});
 
-
-
-
     	$('.audience input:checked').each(function() {
     		business_type.push($(this).attr('name'));
     	});
@@ -137,6 +135,6 @@ $(document).ready(function() {
     	$('.nav_bar').toggleClass('expand_navbar');
     });
     $('.accordian_sec input').on('click', function() {
-    	$(this).prev('img.flag').toggleClass('filter_remove');
+    	$(this).prev('img.flag').toggleClass('filter_add');
     });
 });
