@@ -178,7 +178,8 @@ main {
     width: 100%;
     float: left;
 }
-#cvr label{
+
+#cvr label {
     font: 600 17px "Helvetica";
 }
 
@@ -305,7 +306,7 @@ input[type="range"] {
     display: inline-block;
 }
 
-#world_map {
+.world_map {
     width: 80%;
     height: 400px;
     position: relative;
@@ -444,11 +445,12 @@ footer p {
     padding: 10px;
 }
 
+.activity_sec,
 .contact {
     width: 90%;
-    padding: 10px;
+    padding: 20px 10px;
     box-sizing: border-box;
-    margin: 0 auto;
+    margin: 20px auto;
 }
 
 .contact_detail p {
@@ -479,6 +481,7 @@ footer p {
 .contact_form h4 {
     padding-top: 15px;
 }
+
 .contact_form form {
     margin-top: 20px;
 }
@@ -507,7 +510,6 @@ footer p {
     box-shadow: inset 0 0 1px 1px rgba(128, 128, 128, 1);
 }
 
-
 .send {
     width: 110px;
     padding: 14px;
@@ -522,7 +524,7 @@ footer p {
     box-shadow: 0px 1.5px 1px #000;
 }
 
-input[type="checkbox"] {
+.checkboxes {
     width: 25px;
     height: 25px;
     margin: 10px;
@@ -540,28 +542,60 @@ input[type="checkbox"] {
 .label:before {
     content: '';
     position: absolute;
-    background: url("../assets/checkbox.svg") no-repeat;
-    background-size: 100% 100%;
+    background-color: #fff;
     width: 30px;
     height: 30px;
     top: -3px;
     left: -37px;
     cursor: pointer;
-    transition: 1s linear;
 }
-
-#world_map input[type="checkbox"] {
-    opacity: 0;
+.label:after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 20px;
+    left: -34px;
+    top: 8px;
+    transform: rotateX(180deg) rotateZ(-32deg);
+    transform-origin: left top;
+    border-top: 5px solid #4D5F6B;
+    border-right: 5px solid #4D5F6B;
+    display: none;
+}
+.wm_checkboxes {
+    z-index: -1;
+    cursor: pointer;
 }
 
 .checkboxes:checked + .label:before {
     content: '';
-    background: url("../assets/checkbox_tick.svg") no-repeat;
-    background-size: 100% 100%;
+    background-color: #fff;
     position: absolute;
-    top: -3px;
-    left: -37px;
 }
+.checkboxes:checked + .label:after {
+    animation: check;
+    animation-duration: 1s;
+    display: inline-block;
+}
+@keyframes check {
+    0% {
+        height: 0;
+        width: 0;
+    }
+    25% {
+        height: 0;
+        width: 10px;
+    }
+    50% {
+        height: 20px;
+        width: 10px;
+    }
+    100% {
+        height: 20px;
+        width: 10px;
+    }
+}
+
 
 input[type=range] {
     -webkit-appearance: none;
@@ -611,9 +645,7 @@ input+label {
 .filter_add {
     filter: grayscale(1);
 }
-#asia_chbox{
-    display: none;
-}
+
 @media screen and (min-width: 768px) {
     .icons,
     .logout {
@@ -683,13 +715,13 @@ input+label {
         box-sizing: border-box;
         position: static;
         background-color: #f7f7f7;
-        border-radius: 10px;
+        border-radius: 5px;
         border: 1px solid #aaa;
         box-shadow: 0 0 1px 1px rgba(170, 170, 170, 1), inset 0 0 2px 5px rgba(216, 213, 213, 0.2);
     }
     .nav_bar ul>li {
         display: inline-block;
-        padding: 10px 20px;
+        padding: 12px 28px;
         font-size: 12px;
         text-transform: capitalize;
     }
@@ -718,20 +750,19 @@ input+label {
         margin: 15px auto;
         font-size: 22px;
     }
-    .flyout_menu{
+    .flyout_menu {
         width: 270px;
         height: 420px;
         display: inline-block;
         position: fixed;
-        top: 100px;
+        top: 150px;
         left: -235px;
         transition: all .5s;
-
     }
     .flyout {
         background-color: #445662;
         width: 220px;
-        height: 100%;   
+        height: 100%;
         overflow-y: auto;
         color: #fff;
         padding: 20px;
@@ -744,8 +775,7 @@ input+label {
         display: inline-block;
         word-wrap: break-word;
         white-space: pre-line;
-        overflow: scroll;
-
+        overflow-y: scroll;
     }
     .flyout_btn {
         display: inline-block;
@@ -767,6 +797,8 @@ input+label {
     .flyout_title {
         writing-mode: vertical-lr;
         transform: rotate(180deg);
+        color: #4D5F6B;
+        font: 600 18px "Helvetica";
     }
     .flyout_arrow {
         margin: 5px;
@@ -812,6 +844,13 @@ input+label {
         margin-top: 35px;
         padding: 10px 0;
     }
+    .activity_sec section:nth-child(2) h4,
+    .activity_sec section:nth-child(2) p {
+        display: inline-block;
+    }
+    .activity_sec section:nth-child(2) p {
+        float: right;
+    }
     .activity {
         display: table;
     }
@@ -835,46 +874,48 @@ input+label {
     }
 }
 
-#world_map input[type="checkbox"] {
-    width: 18px;
-    height: 18px;
-    z-index: 10;
-    opacity: 1;
-}
-
-#asia_chbox {
+.asia_chbox {
     position: absolute;
-    display: block;
     top: 160px;
     right: 170px;
 }
 
-#africa_chbox {
+.africa_chbox {
     position: absolute;
-        top: 220px;
+    top: 220px;
     right: 270px;
 }
 
-#europe_chbox {
+.europe_chbox {
     position: absolute;
-        top: 120px;
+    top: 120px;
     right: 250px;
 }
 
-#namerica_chbox {
+.namerica_chbox {
     position: absolute;
-        top: 120px;
+    top: 120px;
     left: 70px;
 }
 
-#samerica_chbox {
+.samerica_chbox {
     position: absolute;
     top: 250px;
     left: 170px
 }
 
-#oceania_chbox {
+.oceania_chbox {
     position: absolute;
-        bottom: 95px;
+    bottom: 100px;
     right: 80px;
+}
+
+
+@media screen and (min-width: 1024px) {
+    .wm_checkboxes {
+        width: 18px;
+        height: 18px;
+        z-index: 10;
+        display: block;
+    }
 }

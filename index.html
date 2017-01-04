@@ -121,7 +121,7 @@
                         <h3>Hunter/ Farmer</h3>
                         <span class="hunter">Hunter</span>
                         <span class="farmer">Farmer</span>
-                        <input type="range" name="" id="">
+                        <input type="range" name="" id="slider" min="0" max="100">
                     </section>
                     <section class="solutions">
                         <h3>Solutions</h3>
@@ -295,13 +295,13 @@
                     </section>
                     <section class="accordian_sec">
                         <h3>Export</h3>
-                        <div id="world_map" >
-                            <input type="checkbox" name="asia" id="asia_chbox"  class="checkboxes">
-                            <input type="checkbox" name="africa" id="africa_chbox"  class="checkboxes">
-                            <input type="checkbox" name="europe" id="europe_chbox"  class="checkboxes">
-                            <input type="checkbox" name="north_america" id="namerica_chbox"  class="checkboxes">
-                            <input type="checkbox" name="south_america" id="samerica_chbox"  class="checkboxes">
-                            <input type="checkbox" name="oceania" id="oceania_chbox" class="checkboxes">
+                        <div class="world_map" >
+                            <input type="checkbox" name="asia"   class="wm_checkboxes asia_chbox" >
+                            <input type="checkbox" name="africa"   class="wm_checkboxes africa_chbox" >
+                            <input type="checkbox" name="europe"  class="wm_checkboxes europe_chbox" >
+                            <input type="checkbox" name="north_america"  class="wm_checkboxes namerica_chbox" >
+                            <input type="checkbox" name="south_america"  class="wm_checkboxes samerica_chbox" >
+                            <input type="checkbox" name="oceania"  class="wm_checkboxes oceania_chbox" >
 
                         </div>
                         <div class="accordian">
@@ -311,32 +311,32 @@
                                 <ul>
                                     <li>
                                         <img class="flag" src="assets/india_flag.png" alt="india">
-                                        <input type="checkbox" name="" id="india"  checked="false" class="checkboxes">
+                                        <input type="checkbox" name="" id="india"   class="checkboxes">
                                         <label class="label" for="india">India</label>
                                     </li>
                                     <li>
                                          <img class="flag" src="assets/china_flag.png" alt="china">
-                                            <input type="checkbox" name="" id="china" checked="false" class="checkboxes">
+                                            <input type="checkbox" name="" id="china"  class="checkboxes">
                                             <label class="label" for="china">China</label>
                                     </li>
                                     <li>
                                         <img class="flag" src="assets/russia_flag.jpg" alt="russia">
-                                        <input type="checkbox" name="" id="russia" checked="false" class="checkboxes">
+                                        <input type="checkbox" name="" id="russia"  class="checkboxes">
                                         <label class="label" for="russia">Russia</label>
                                     </li>
                                     <li>
                                         <img class="flag" src="assets/afganistan_flag.png" alt="afganistan">
-                                        <input type="checkbox" name="" id="afganistan" checked="false" class="checkboxes">
+                                        <input type="checkbox" name="" id="afganistan"  class="checkboxes">
                                         <label class="label" for="afganistan">Afganistan</label>
                                     </li>
                                     <li>
                                         <img class="flag" src="assets/bahrain_flag.png" alt="bahrain">
-                                        <input type="checkbox" name="" id="bahrain" checked="false" class="checkboxes">
+                                        <input type="checkbox" name="" id="bahrain"  class="checkboxes">
                                         <label class="label" for="bahrain">Bahrain</label>
                                     </li>
                                     <li>
                                         <img class="flag" src="assets/bangladesh_flag.jpg" alt="bangladesh">
-                                        <input type="checkbox" name="" id="bangladesh" checked="true" class="checkboxes">
+                                        <input type="checkbox" name="" id="bangladesh" class="checkboxes">
                                         <label class="label" for="bangladesh">Bangladdesh</label>
                                     </li>
                                 </ul>
@@ -368,7 +368,7 @@
                                     <li>
                                         <img class="flag" src="assets/cuba_flag.png" alt="cuba">
                                         <input type="checkbox" name="" id="cuba" checked="false" class="checkboxes">
-                                        <label class="label" id="cuba"> Cuba</label>
+                                        <label class="label" for="cuba"> Cuba</label>
                                     </li>
                                     <li>
                                         <img class="flag" src="assets/jamaica_flag.jpg" alt="jamaica">
@@ -382,18 +382,18 @@
                             <div id="SA" class="accr_hidden s_america">
                                 <ul>
                                     <li>
-                                        <img class="flag" src="assets/argentina_flag.jpg" alt="argentina" checked="false">
-                                        <input type="checkbox" name="" id="argentina" class="checkboxes">
+                                        <img class="flag" src="assets/argentina_flag.jpg" alt="argentina" >
+                                        <input type="checkbox" name="" id="argentina" class="checkboxes" checked="false">
                                         <label class="label" for="argentina"> Argentina</label>
                                     </li>
                                     <li>
-                                        <img class="flag" src="assets/brazil_flag.png" alt="brazil" checked="false">
-                                        <input type="checkbox" name="" id="brazil"> class="checkboxes"
+                                        <img class="flag" src="assets/brazil_flag.png" alt="brazil" >
+                                        <input type="checkbox" name="" id="brazil" checked="false" class="checkboxes" >
                                         <label class="label" for="brazil"> Brazil</label>
                                     </li>
                                     <li>
-                                        <img class="flag" src="assets/chile_flag.png" alt="Chile" checked="false">
-                                        <input type="checkbox" name="" id="chile" class="checkboxes">
+                                        <img class="flag" src="assets/chile_flag.png" alt="Chile" >
+                                        <input type="checkbox" name="" id="chile" class="checkboxes" checked="false" >
                                         <label class="label" for="chile"> Chile</label>
                                     </li>
                                 </ul>
@@ -440,7 +440,7 @@
                                     </li>
                                 </ul>
                             </div>
-                            <button id="oceania" class="accr_button">Oceania <i class="fa fa-angle-double-down fa-2x down_arrow" aria-hidden="true"></i>
+                            <button id="oceania" class="accr_button">Australia <i class="fa fa-angle-double-down fa-2x down_arrow" aria-hidden="true"></i>
                             </button>
                             <div id="OC" class="accr_hidden oceania">
                                 <ul>
@@ -480,6 +480,8 @@
             </div>
             <div class="flyout_menu">
                 <div class="flyout">
+                <label >CVR:</label>
+                <p class="values" id="cvr_value"></p>
                 <label>Name:</label>
                 <p class="values" id="name"></p>
                 <label>Business Name:</label>
@@ -488,16 +490,35 @@
                 <p class="values" id="email"></p>
                 <label>Where did you hear about ITSB?</label>
                 <p class="values" id="itsb"></p>
+                <label for="">Hunter/ Farmer</label>
+                <span>Hunter: 
+                    <span  id="hunter"></span>
+                </span>
+                <span>Farmer:
+                    <span id="farmer"></span>
+                </span>
+                <label for="">Solutions:</label>
+                <p class="values" id="solutions"></p>
                 <label for="">Industry:</label>
                 <p class="values" id="industry"></p>
                 <label for="">Sales:</label>
                 <p class="values" id="sales"></p>
-                <label for="">Solutions:</label>
-                <p class="values" id="solutions"></p>
+                
                 <label for="">Audience:</label>
                 <p class="values" id="audience"></p>
                 <label for="">Export:</label>
-                <p class="values" id="export_to"></p>
+                <span>Asia:</span>
+                <p class="values" id="asia_value"></p>
+                <span>Europe:</span>
+                <p class="values" id="europe_value"></p>
+                <span>Africa:</span>
+                <p class="values" id="africa_value"></p>
+                <span>North America:</span>
+                <p class="values" id="namerica_value"></p>
+                <span>South America:</span>
+                <p class="values" id="samerica_value"></p>
+                <span>Australia:</span>
+                <p class="values" id="oceania_value"></p>
             </div>
             <div class="flyout_btn">
                     <p class="flyout_title">

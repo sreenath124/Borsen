@@ -1,6 +1,25 @@
 $(document).ready(function() {
 
-    $('#world_map').vectorMap({
+    var flag_as = {
+            value: false
+        },
+        flag_eu = {
+            value: false
+        },
+        flag_na = {
+            value: false
+        },
+        flag_sa = {
+            value: false
+        },
+        flag_oc = {
+            value: false
+        },
+        flag_af = {
+            value: false
+        };
+
+    $('.world_map').vectorMap({
         map: 'continents_mill',
         backgroundColor: '',
         borderColor: '#818181',
@@ -30,7 +49,7 @@ $(document).ready(function() {
         zoomButtons: false,
         zoomOnScroll: false,
         onRegionClick: function(event, code, region) {
-            var map = $('#world_map').vectorMap('get', 'mapObject');
+            var map = $('.world_map').vectorMap('get', 'mapObject');
             switch (code) {
                 case 'AS':
                     $('#AS').toggleClass('accr_visible');
@@ -58,7 +77,7 @@ $(document).ready(function() {
 
     $('.accordian_sec button').click(function(e) {
         e.preventDefault();
-        var map = $('#world_map').vectorMap('get', 'mapObject');
+        var map = $('.world_map').vectorMap('get', 'mapObject');
         var id = this.id;
 
         if (id == 'asia') {
@@ -75,13 +94,14 @@ $(document).ready(function() {
             map.setSelectedRegions('OC');
         }
         $(this).toggleClass('accr_button_active');
-        $(this).find('input[type="checkbox"]').attr('checked', true);
         $(this).next('.accr_hidden').toggleClass('accr_visible');
+        var a = $(this).next().find('img.flag').addClass('filter_add');
+        console.log(a);
 
     });
-
     setInterval(function() {
-        var name,
+        var cvr = [],
+            name,
             business_name,
             email,
             industry,
@@ -89,14 +109,28 @@ $(document).ready(function() {
             audience,
             export_to,
             source = [],
+            slider,
             business_type = [],
             industry_type = [],
             sales_type = [],
-            solution_type = [];
+            solution_type = [],
+            asia = [],
+            europe = [],
+            africa = [],
+            namerica = [],
+            samerica = [],
+            oceania = [];
+            
+            map= $('.world_map').vectorMap('get', 'mapObject');
+
+        $('.cvr_input').each(function() {
+            cvr.push($(this).val());
+        });
 
         name = $('#personal_details input[name="name"]').val();
         business_name = $('#personal_details input[name="business_name"]').val();
         email = $('#personal_details input[name="email"]').val();
+        slider = $('#slider').val();
 
         $('.source input:checked').each(function() {
             source.push($(this).attr('name'));
@@ -118,15 +152,54 @@ $(document).ready(function() {
             business_type.push($(this).attr('name'));
         });
 
+        $("#AS input:checked").each(function() {
+            asia.push($(this).next('label').text());
+        });
+        $("#EU input:checked").each(function() {
+            europe.push($(this).next('label').text());
+        });
+        $("#AF input:checked").each(function() {
+            africa.push($(this).next('label').text());
+        });
+        $("#SA input:checked").each(function() {
+            samerica.push($(this).next('label').text());
+        });
+        $("#NA input:checked").each(function() {
+            namerica.push($(this).next('label').text());
+        });
+        $("#OC input:checked").each(function() {
+            oceania.push($(this).next('label').text());
+        });
 
+        $('.flyout #cvr_value').text(cvr.join(''));
         $('.flyout #name').text(name);
         $('.flyout #business_name').text(business_name);
         $('.flyout #email').text(email);
         $('.flyout #itsb').text(source.join(','));
+        $('.flyout #hunter').text(100 - slider + "%");
+        $('.flyout #farmer').text(slider + '%');
         $('.flyout #industry').text(industry_type.join(','));
         $('.flyout #audience').text(business_type.join(','));
         $('.flyout #sales').text(sales_type.join(','));
         $('.flyout #solutions').text(solution_type.join(','));
+        $('.flyout #asia_value').text(asia.join(','));
+        $('.flyout #africa_value').text(africa.join(','));
+        $('.flyout #namerica_value').text(namerica.join(','));
+        $('.flyout #samerica_value').text(samerica.join(','));
+        $('.flyout #europe_value').text(europe.join(','));
+        $('.flyout #oceania_value').text(oceania.join(','));
+
+        if(asia.length == 0) {
+            $('.asia_chbox').prop('checked', false);
+            map.setSelectedRegions({'AS':false});
+            flag_as.value=false;
+        }
+        else{
+             $('.asia_chbox').prop('checked', true);
+            map.setSelectedRegions({'AS':true});
+            flag_as.value=true;
+        }
+
 
     }, 2000);
 
@@ -139,84 +212,49 @@ $(document).ready(function() {
     $('.accordian_sec input').on('click', function() {
         $(this).prev('img.flag').toggleClass('filter_add');
     });
-   
-    var map = $('#world_map').vectorMap('get', 'mapObject');
-    var flag_as=false,
-        flag_eu=false,
-        flag_na=false,
-        flag_sa=false,
-        flag_af=false,
-        flag_oc=false;
-    $('#asia_chbox').on('click', function() {
-        if (!!flag_as) {
-            flag_as = (!flag_as);
-            map.clearSelectedRegions('AS');
-         $('#AS').removeClass('accr_visible');
-            console.log(flag_as);
-        } else {
-            map.setSelectedRegions('AS');
-               $("#AS").addClass('accr_visible');
-            flag_as = (!flag_as);
-            console.log(flag_as);
-        }
+
+    var map = $('.world_map').vectorMap('get', 'mapObject');
+    
+    $('.asia_chbox').on('click', function() {
+        onMapCheckboxClick("#AS", "AS", flag_as);
 
     });
-    $('#europe_chbox').on('click', function() {
-        if (!!flag_eu) {
-            flag_eu = (!flag_eu);
-            map.clearSelectedRegions('EU');
-            $("#EU").removeClass('accr_visible');
-            console.log(flag_eu);
-        } else {
-            map.setSelectedRegions('EU');
-            $('#EU').addClass('accr_visible');
-            flag_eu = (!flag_eu);
-            console.log(flag_eu);
-        }
+    $('.europe_chbox').on('click', function() {
+        onMapCheckboxClick("#EU", "EU", flag_eu);
 
     });
-    $('#oceania_chbox').on('click', function() {
-        if (!!flag_oc) {
-            flag_oc = (!flag_oc);
-            map.clearSelectedRegions('OC');
-            $('#OC').removeClass('accr_visible');
-            console.log(flag_oc);
-        } else {
-            $('#OC').addClass('accr_visible');
-            map.setSelectedRegions('OC');
-            flag_oc = (!flag_oc);
-            console.log(flag_oc);
-        }
+    $('.oceania_chbox').on('click', function() {
+        onMapCheckboxClick("#OC", "OC", flag_oc);
 
     });
-     $('#namerica_chbox').on('click', function() {
-        if (!!flag_na) {
-            flag_na = (!flag_na);
-            map.clearSelectedRegions('NA');
-            $("#NA").removeClass('accr_visible');
-            console.log(flag_na);
-        } else {
-            map.setSelectedRegions('NA');
-            $('#SA').addClass('accr_visible');
-            flag_na = (!flag_na);
-            console.log(flag_na);
-        }
+    $('.namerica_chbox').on('click', function() {
+      onMapCheckboxClick("#NA", "NA", flag_na);
 
     });
-     $('#samerica_chbox').on('click', function() {
-        if (!!flag_sa) {
-            flag_sa = (!flag_sa);
-            $('#SA').removeClass('accr_visible');
-            map.clearSelectedRegions('SA');
-            console.log(flag_sa);
-        } else {
-            map.setSelectedRegions('SA');
-            $("#SA").addClass('accr_visible');
-            flag_sa = (!flag_sa);
-            console.log(flag_sa);
-        }
+    $('.samerica_chbox').on('click', function() {
+        onMapCheckboxClick("#SA", "SA", flag_sa);
 
     });
+    $('.africa_chbox').on('click', function() {
+        onMapCheckboxClick("#AF", "AF", flag_af);
+    });
+
+    function onMapCheckboxClick(accordion_id, region_code, flags) {
+        var map = $('.world_map').vectorMap('get', 'mapObject');
+        var region_object = {};
+        if (!!flags.value) {
+            flags.value = false;
+            $(accordion_id).prev('button').removeClass('accr_button_active');
+            $(accordion_id).removeClass('accr_visible').find('.checkboxes').prop('checked', false);
+            region_object[region_code]= false;
+            map.setSelectedRegions(region_object);
+        } else {
+            map.setSelectedRegions(region_code);
+            $(accordion_id).prev('button').addClass('accr_button_active');
+            $(accordion_id).addClass('accr_visible').find('.checkboxes').prop('checked', true);
+            flags.value = true;
+        }
+    }
 
 
 });
