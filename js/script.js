@@ -84,6 +84,7 @@ $(document).ready(function() {
     });
     setInterval(function() {
         var cvr = [],
+            cvr_value,
             name,
             business_name,
             email,
@@ -103,13 +104,13 @@ $(document).ready(function() {
             namerica = [],
             samerica = [],
             oceania = [];
-            
-            map= $('.world_map').vectorMap('get', 'mapObject');
+
+        map = $('.world_map').vectorMap('get', 'mapObject');
 
         $('.cvr_input').each(function() {
             cvr.push($(this).val());
         });
-
+        cvr_value = cvr.join('');
         name = $('#personal_details input[name="name"]').val();
         business_name = $('#personal_details input[name="business_name"]').val();
         email = $('#personal_details input[name="email"]').val();
@@ -160,7 +161,7 @@ $(document).ready(function() {
             $(this).prev('img.flag').addClass('filter_remove');
         });
 
-        $('.flyout #cvr_value').text(cvr.join(''));
+        $('.flyout #cvr_value').text(cvr_value);
         $('.flyout #name').text(name);
         $('.flyout #business_name').text(business_name);
         $('.flyout #email').text(email);
@@ -178,74 +179,65 @@ $(document).ready(function() {
         $('.flyout #europe_value').text(europe.join(','));
         $('.flyout #oceania_value').text(oceania.join(','));
 
-        if(asia.length === 0) {
+        if (asia.length === 0) {
             $('.asia_chbox').prop('checked', false);
-            map.setSelectedRegions({'AS':false});
-            flag_as.value=false;
+            map.setSelectedRegions({ 'AS': false });
+            flag_as.value = false;
+        } else {
+            $('.asia_chbox').prop('checked', true);
+            map.setSelectedRegions({ 'AS': true });
+            flag_as.value = true;
         }
-        else{
-             $('.asia_chbox').prop('checked', true);
-            map.setSelectedRegions({'AS':true});
-            flag_as.value=true;
-        }
-        if(africa.length===0){
+        if (africa.length === 0) {
             $('.africa_chbox').prop('checked', false);
-            map.setSelectedRegions({'AF': false});
+            map.setSelectedRegions({ 'AF': false });
             flag_af.value = false;
-        }
-        else{
+        } else {
             $('.africa_chbox').prop('checked', true);
-            map.setSelectedRegions({'AF': true});
+            map.setSelectedRegions({ 'AF': true });
             flag_af.value = true;
         }
 
-        if(namerica.length===0) {
+        if (namerica.length === 0) {
             $('.namerica_chbox').prop('checked', false);
-            map.setSelectedRegions({'NA': false});
-            flag_na.value= false;
+            map.setSelectedRegions({ 'NA': false });
+            flag_na.value = false;
+        } else {
+            $('.namerica_chbox').prop('checked', true);
+            map.setSelectedRegions({ 'NA': true });
+            flag_na.value = true;
         }
-        else {
-             $('.namerica_chbox').prop('checked', true);
-            map.setSelectedRegions({'NA': true});
-            flag_na.value= true;
-        }
-        if(samerica.length===0) {
+        if (samerica.length === 0) {
             $('.samerica_chbox').prop('checked', false);
-            map.setSelectedRegions({'SA': false});
-            flag_sa.value= false;
+            map.setSelectedRegions({ 'SA': false });
+            flag_sa.value = false;
+        } else {
+            $('.samerica_chbox').prop('checked', true);
+            map.setSelectedRegions({ 'SA': true });
+            flag_sa.value = true;
         }
-        else {
-             $('.samerica_chbox').prop('checked', true);
-            map.setSelectedRegions({'SA': true});
-            flag_sa.value= true;
-        }
-        if(europe.length===0) {
+        if (europe.length === 0) {
             $('.europe_chbox').prop('checked', false);
-            map.setSelectedRegions({'EU': false});
-            flag_eu.value=false;
-        }
-        else{
+            map.setSelectedRegions({ 'EU': false });
+            flag_eu.value = false;
+        } else {
             $('.europe_chbox').prop('checked', true);
-            map.setSelectedRegions({'EU': true});
-            flag_eu.value= true;
+            map.setSelectedRegions({ 'EU': true });
+            flag_eu.value = true;
         }
-        if(oceania.length===0) {
+        if (oceania.length === 0) {
             $('.oceania_chbox').prop('checked', false);
-            map.setSelectedRegions({'OC': false});
-            flag_oc.value=false;
-        }
-        else{
+            map.setSelectedRegions({ 'OC': false });
+            flag_oc.value = false;
+        } else {
             $('.oceania_chbox').prop('checked', true);
-            map.setSelectedRegions({'OC': true});
-            flag_oc.value= true;
+            map.setSelectedRegions({ 'OC': true });
+            flag_oc.value = true;
         }
 
         $('.accordian input:checkbox:not(:checked)').each(function() {
             $(this).prev('img.flag').removeClass('filter_remove');
         });
-
-        
-
 
     }, 500);
 
@@ -255,12 +247,11 @@ $(document).ready(function() {
     $('#menu_btn').on('click', function() {
         $('.nav_bar').toggleClass('expand_navbar');
     });
- 
 
 
     var map = $('.world_map').vectorMap('get', 'mapObject');
-   
-    
+
+
     $('.asia_chbox').on('click', function() {
         onMapCheckboxClick("#AS", "AS", flag_as);
 
@@ -274,7 +265,7 @@ $(document).ready(function() {
 
     });
     $('.namerica_chbox').on('click', function() {
-      onMapCheckboxClick("#NA", "NA", flag_na);
+        onMapCheckboxClick("#NA", "NA", flag_na);
 
     });
     $('.samerica_chbox').on('click', function() {
@@ -284,7 +275,11 @@ $(document).ready(function() {
     $('.africa_chbox').on('click', function() {
         onMapCheckboxClick("#AF", "AF", flag_af);
     });
-  
+
+
+    $('#sign_up').on('click', function() {
+        validateForm();
+    });
 
     function onMapCheckboxClick(accordion_id, region_code, flags) {
         var map = $('.world_map').vectorMap('get', 'mapObject');
@@ -293,7 +288,7 @@ $(document).ready(function() {
             flags.value = false;
             $(accordion_id).prev('button').removeClass('accr_button_active');
             $(accordion_id).removeClass('accr_visible').find('.checkboxes').prop('checked', false);
-            region_object[region_code]= false;
+            region_object[region_code] = false;
             map.setSelectedRegions(region_object);
         } else {
             map.setSelectedRegions(region_code);
@@ -302,6 +297,52 @@ $(document).ready(function() {
             flags.value = true;
         }
         return false;
+    }
+
+    function validateForm() {
+
+        var zip = $("#zipcode").val(),
+            email = $("#email").val(),
+            confirm_email = $("#confirm_email").val(),
+            password = $("#password").val(),
+            confirm_password = $('#confirm_password').val();
+
+        var regex_zip = /^[0-9]+$/;
+        var regex_email = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+        $('#personal_details input').each(function() {
+            if ($(this).val() === '') {
+                alert("please enter your" + $(this).attr('name'));
+                return false;
+            }
+        });
+
+        if (!!zip) {
+            if (!regex_zip.test(zip)) {
+                alert("enter valid zip");
+            }
+        }
+        if (!!email) {
+            if (!regex_email.test(email)) {
+                alert("enter valid email");
+            }
+        }
+        if (!!confirm_email) {
+            if (confirm_email !== email) {
+                alert("Email not matching");
+            }
+        }
+        if (!!password) {
+            if (password.length < 10) {
+                alert("Password must be atleast 10 characters!");
+            }
+        }
+        if (!!confirm_password) {
+            if (confirm_password !== password) {
+                alert("password not matching");
+            }
+        }
+
     }
 
 });

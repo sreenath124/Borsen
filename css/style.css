@@ -320,6 +320,7 @@ input[type="range"] {
     width: 100%;
 }
 
+
 .farmer {
     float: right;
 }
@@ -648,6 +649,7 @@ footer p {
 
 .wm_checkboxes {
     z-index: -1;
+    display: none;
     cursor: pointer;
 }
 
@@ -740,7 +742,9 @@ input+label {
     text-shadow: 0 2px #fff;
 }
 
-.flyout {
+.flyout,
+.flyout_title,
+.flyout_btn {
     display: none;
 }
 
@@ -943,6 +947,7 @@ input+label {
        transform: rotate(180deg);
         color: #4D5F6B;
         font: 600 18px "Helvetica";
+        display: inline-block;
     }
     .flyout_arrow {
         margin: 5px;
@@ -1014,7 +1019,7 @@ input+label {
     .thumbnail {
         width: 100%;
     }
-}
+
 
 .asia_chbox {
     position: absolute;
@@ -1051,11 +1056,11 @@ input+label {
     bottom: 100px;
     right: 90px;
 }
-
-@media screen and (min-width: 1024px) {
-    .wm_checkboxes {
+ .wm_checkboxes {
         width: 18px;
         height: 18px;
+        display: inline-block;
         z-index: 10;
     }
-}
+
+
