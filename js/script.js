@@ -77,26 +77,9 @@ $(document).ready(function() {
 
     $('.accordian_sec button').click(function(e) {
         e.preventDefault();
-        var map = $('.world_map').vectorMap('get', 'mapObject');
         var id = this.id;
-
-        if (id == 'asia') {
-            map.setSelectedRegions('AS');
-        } else if (id == 'africa') {
-            map.setSelectedRegions('AF');
-        } else if (id == 'europe') {
-            map.setSelectedRegions('EU');
-        } else if (id == 'north_america') {
-            map.setSelectedRegions('NA');
-        } else if (id == 'south_america') {
-            map.setSelectedRegions('SA');
-        } else if (id == 'oceania') {
-            map.setSelectedRegions('OC');
-        }
         $(this).toggleClass('accr_button_active');
         $(this).next('.accr_hidden').toggleClass('accr_visible');
-        var a = $(this).next().find('img.flag').addClass('filter_add');
-        console.log(a);
 
     });
     setInterval(function() {
@@ -154,21 +137,27 @@ $(document).ready(function() {
 
         $("#AS input:checked").each(function() {
             asia.push($(this).next('label').text());
+            $(this).prev('img.flag').addClass('filter_remove');
         });
         $("#EU input:checked").each(function() {
             europe.push($(this).next('label').text());
+            $(this).prev('img.flag').addClass('filter_remove');
         });
         $("#AF input:checked").each(function() {
             africa.push($(this).next('label').text());
+            $(this).prev('img.flag').addClass('filter_remove');
         });
         $("#SA input:checked").each(function() {
             samerica.push($(this).next('label').text());
+            $(this).prev('img.flag').addClass('filter_remove');
         });
         $("#NA input:checked").each(function() {
             namerica.push($(this).next('label').text());
+            $(this).prev('img.flag').addClass('filter_remove');
         });
         $("#OC input:checked").each(function() {
             oceania.push($(this).next('label').text());
+            $(this).prev('img.flag').addClass('filter_remove');
         });
 
         $('.flyout #cvr_value').text(cvr.join(''));
@@ -189,7 +178,7 @@ $(document).ready(function() {
         $('.flyout #europe_value').text(europe.join(','));
         $('.flyout #oceania_value').text(oceania.join(','));
 
-        if(asia.length == 0) {
+        if(asia.length === 0) {
             $('.asia_chbox').prop('checked', false);
             map.setSelectedRegions({'AS':false});
             flag_as.value=false;
@@ -199,9 +188,66 @@ $(document).ready(function() {
             map.setSelectedRegions({'AS':true});
             flag_as.value=true;
         }
+        if(africa.length===0){
+            $('.africa_chbox').prop('checked', false);
+            map.setSelectedRegions({'AF': false});
+            flag_af.value = false;
+        }
+        else{
+            $('.africa_chbox').prop('checked', true);
+            map.setSelectedRegions({'AF': true});
+            flag_af.value = true;
+        }
+
+        if(namerica.length===0) {
+            $('.namerica_chbox').prop('checked', false);
+            map.setSelectedRegions({'NA': false});
+            flag_na.value= false;
+        }
+        else {
+             $('.namerica_chbox').prop('checked', true);
+            map.setSelectedRegions({'NA': true});
+            flag_na.value= true;
+        }
+        if(samerica.length===0) {
+            $('.samerica_chbox').prop('checked', false);
+            map.setSelectedRegions({'SA': false});
+            flag_sa.value= false;
+        }
+        else {
+             $('.samerica_chbox').prop('checked', true);
+            map.setSelectedRegions({'SA': true});
+            flag_sa.value= true;
+        }
+        if(europe.length===0) {
+            $('.europe_chbox').prop('checked', false);
+            map.setSelectedRegions({'EU': false});
+            flag_eu.value=false;
+        }
+        else{
+            $('.europe_chbox').prop('checked', true);
+            map.setSelectedRegions({'EU': true});
+            flag_eu.value= true;
+        }
+        if(oceania.length===0) {
+            $('.oceania_chbox').prop('checked', false);
+            map.setSelectedRegions({'OC': false});
+            flag_oc.value=false;
+        }
+        else{
+            $('.oceania_chbox').prop('checked', true);
+            map.setSelectedRegions({'OC': true});
+            flag_oc.value= true;
+        }
+
+        $('.accordian input:checkbox:not(:checked)').each(function() {
+            $(this).prev('img.flag').removeClass('filter_remove');
+        });
+
+        
 
 
-    }, 2000);
+    }, 500);
 
     $('.flyout_btn').on('click', function() {
         $('.flyout_menu').toggleClass('expand_flyout');
@@ -209,11 +255,11 @@ $(document).ready(function() {
     $('#menu_btn').on('click', function() {
         $('.nav_bar').toggleClass('expand_navbar');
     });
-    $('.accordian_sec input').on('click', function() {
-        $(this).prev('img.flag').toggleClass('filter_add');
-    });
+ 
+
 
     var map = $('.world_map').vectorMap('get', 'mapObject');
+   
     
     $('.asia_chbox').on('click', function() {
         onMapCheckboxClick("#AS", "AS", flag_as);
@@ -238,6 +284,7 @@ $(document).ready(function() {
     $('.africa_chbox').on('click', function() {
         onMapCheckboxClick("#AF", "AF", flag_af);
     });
+  
 
     function onMapCheckboxClick(accordion_id, region_code, flags) {
         var map = $('.world_map').vectorMap('get', 'mapObject');
@@ -254,7 +301,7 @@ $(document).ready(function() {
             $(accordion_id).addClass('accr_visible').find('.checkboxes').prop('checked', true);
             flags.value = true;
         }
+        return false;
     }
-
 
 });

@@ -60,19 +60,19 @@
                     <section id="personal_details" class="left">
                         <div id="cvr">
                             <label>CVR</label>
-                            <input class="cvr_input" type="text" name="cvr" maxlength=1 placeholder="0">
-                            <input class="cvr_input" type="text" name="cvr" maxlength=1 placeholder="0">
-                            <input class="cvr_input" type="text" name="cvr" maxlength=1 placeholder="0">
-                            <input class="cvr_input" type="text" name="cvr" maxlength=1 placeholder="0">
-                            <input class="cvr_input" type="text" name="cvr" maxlength=1 placeholder="0">
-                            <input class="cvr_input" type="text" name="cvr" maxlength=1 placeholder="0">
-                            <input class="cvr_input" type="text" name="cvr" maxlength=1 placeholder="0">
-                            <input class="cvr_input" type="text" name="cvr" maxlength=1 placeholder="0">
+                            <input class="cvr_input" type="text" name="cvr" maxlength=1 >
+                            <input class="cvr_input" type="text" name="cvr" maxlength=1 >
+                            <input class="cvr_input" type="text" name="cvr" maxlength=1 >
+                            <input class="cvr_input" type="text" name="cvr" maxlength=1 >
+                            <input class="cvr_input" type="text" name="cvr" maxlength=1 >
+                            <input class="cvr_input" type="text" name="cvr" maxlength=1 >
+                            <input class="cvr_input" type="text" name="cvr" maxlength=1 >
+                            <input class="cvr_input" type="text" name="cvr" maxlength=1 >
                         </div>
-                        <input class="left" type="text" name="business_name" placeholder="Businessname">
+                        <input class="left" type="text" name="business_name" placeholder="Businessname" id="Businessname">
                         <input class="left" type="text" name="name" placeholder="Name">
                         <input class="left" type="text" name="last_name" placeholder="Last Name">
-                        <input class="left" type="text" name="address" placeholder="Adress">
+                        <input class="left" type="text" name="address" placeholder="Address">
                         <input class="left" type="text" name="zip" placeholder="ZIP Code">
                         <input class="left" type="text" name="city" placeholder="City">
                         <input class="left" type="text" name="email" placeholder="E-mail">
@@ -80,6 +80,7 @@
                         <input class="left" type="password" name="password" placeholder="Password">
                         <input class="left" type="password" name="confirm_password" placeholder="Confirm Password">
                     </section>
+                    <hr class="section_border">
                     <section class="source clear">
                         <h3>where did you hear about ITSB.DK</h3>
                         <ul>
@@ -117,12 +118,14 @@
                             </li>
                         </ul>
                     </section>
+                    <hr class="section_border">
                     <section>
                         <h3>Hunter/ Farmer</h3>
-                        <span class="hunter">Hunter</span>
-                        <span class="farmer">Farmer</span>
+                        <span id="hunter" class="left hunter">Hunter</span>
+                        <span id="farmer" class="farmer">Farmer</span>
                         <input type="range" name="" id="slider" min="0" max="100">
                     </section>
+                    <hr class="section_border">
                     <section class="solutions">
                         <h3>Solutions</h3>
                         <ul>
@@ -156,6 +159,7 @@
                             </li>
                         </ul>
                     </section>
+                    <hr class="section_border">
                     <section class="industry">
                         <h3>Industry</h3>
                         <ul>
@@ -209,6 +213,7 @@
                             </li>
                         </ul>
                     </section>
+                    <hr class="section_border">
                     <section class="sales">
                         <h3>Sales</h3>
                         <ul>
@@ -238,6 +243,7 @@
                             </li>
                         </ul>
                     </section>
+                    <hr class="section_border">
                     <section class="audience">
                         <h3>Audience</h3>
                         <div class="audience_container">
@@ -256,6 +262,11 @@
                                 <i class="fa fa-male fa-2x" aria-hidden="true"></i>
                                 <i class="fa fa-male fa-2x" aria-hidden="true"></i>
                                 <i class="fa fa-male fa-2x" aria-hidden="true"></i>
+                                  <i class="fa fa-male fa-2x desktop_view" aria-hidden="true"></i>
+                                <i class="fa fa-male fa-2x desktop_view" aria-hidden="true"></i>
+                                <i class="fa fa-male fa-2x desktop_view" aria-hidden="true"></i>
+                                <i class="fa fa-male fa-2x desktop_view" aria-hidden="true"></i>
+                                <i class="fa fa-male fa-2x desktop_view" aria-hidden="true"></i>
                             </div>
                             <input type="checkbox" name="small" id="small_business" class="checkboxes">
                             <label class="label" for="small_business"> Small businesses (less than 50 employees)</label>
@@ -270,6 +281,11 @@
                                 <i class="fa fa-male fa-2x" aria-hidden="true"></i>
                                 <i class="fa fa-male fa-2x" aria-hidden="true"></i>
                                 <i class="fa fa-male fa-2x" aria-hidden="true"></i>
+                                  <i class="fa fa-male fa-2x desktop_view" aria-hidden="true"></i>
+                                <i class="fa fa-male fa-2x desktop_view" aria-hidden="true"></i>
+                                <i class="fa fa-male fa-2x desktop_view" aria-hidden="true"></i>
+                                <i class="fa fa-male fa-2x desktop_view" aria-hidden="true"></i>
+                                <i class="fa fa-male fa-2x desktop_view" aria-hidden="true"></i>
                             </div>
                             <input type="checkbox" name="medium" id="medium_business" class="checkboxes">
                             <label class="label" for="medium_business"> Medium businesses (less than 250 employees)</label>
@@ -286,17 +302,34 @@
                                 <i class="fa fa-male fa-2x" aria-hidden="true"></i>
                                 <i class="fa fa-male fa-2x" aria-hidden="true"></i>
                                 <i class="fa fa-male fa-2x" aria-hidden="true"></i>
-                                <i class="fa fa-male fa-2x" aria-hidden="true"></i>
-                                <i class="fa fa-male fa-2x" aria-hidden="true"></i>
+                               <i class="fa fa-male fa-2x desktop_view" aria-hidden="true"></i>
+                                <i class="fa fa-male fa-2x desktop_view" aria-hidden="true"></i>
+                                <i class="fa fa-male fa-2x desktop_view" aria-hidden="true"></i>
+                                <i class="fa fa-male fa-2x desktop_view" aria-hidden="true"></i>
+                                <i class="fa fa-male fa-2x desktop_view" aria-hidden="true"></i>
+                                <i class="fa fa-male fa-2x desktop_view" aria-hidden="true"></i>
+                                <i class="fa fa-male fa-2x desktop_view" aria-hidden="true"></i>
+                                <i class="fa fa-male fa-2x desktop_view" aria-hidden="true"></i>
+                                <i class="fa fa-male fa-2x desktop_view" aria-hidden="true"></i>
+                                <i class="fa fa-male fa-2x desktop_view" aria-hidden="true"></i>
+                                <i class="fa fa-male fa-2x desktop_view" aria-hidden="true"></i>
+                                <i class="fa fa-male fa-2x desktop_view" aria-hidden="true"></i>
+                                <i class="fa fa-male fa-2x desktop_view" aria-hidden="true"></i>
+                                <i class="fa fa-male fa-2x desktop_view" aria-hidden="true"></i>
+                                <i class="fa fa-male fa-2x desktop_view" aria-hidden="true"></i>
+                                <i class="fa fa-male fa-2x desktop_view" aria-hidden="true"></i>
+                                <i class="fa fa-male fa-2x desktop_view" aria-hidden="true"></i>
+                                <i class="fa fa-male fa-2x desktop_view" aria-hidden="true"></i>
                             </div>
                             <input type="checkbox" name="big" id="big_business"  class="checkboxes">
                             <label class="label" for="big_business"> Big businesses (more than 10k employees)</label>
                         </div>
                     </section>
+                    <hr class="section_border">
                     <section class="accordian_sec">
                         <h3>Export</h3>
                         <div class="world_map" >
-                            <input type="checkbox" name="asia"   class="wm_checkboxes asia_chbox" >
+                            <input type="checkbox" name="asia"   class="wm_checkboxes asia_chbox" id="a" data-id="#AS" data-code="AS" data-flag=flag_as onClick="funCheckbox(this);">
                             <input type="checkbox" name="africa"   class="wm_checkboxes africa_chbox" >
                             <input type="checkbox" name="europe"  class="wm_checkboxes europe_chbox" >
                             <input type="checkbox" name="north_america"  class="wm_checkboxes namerica_chbox" >
@@ -307,7 +340,7 @@
                         <div class="accordian">
                             <button id="asia" class="accr_button">Asia <i class="fa fa-angle-double-down fa-2x down_arrow" aria-hidden="true"></i>
                             </button>
-                            <div id="AS" class="accr_hidden asia">
+                            <div id="AS" class="accr_hidden asia accr_content">
                                 <ul>
                                     <li>
                                         <img class="flag" src="assets/india_flag.png" alt="india">
@@ -343,126 +376,127 @@
                             </div>
                             <button id="north_america" class="accr_button">North America <i class="fa fa-angle-double-down fa-2x down_arrow" aria-hidden="true"></i>
                             </button>
-                            <div id="NA" class="accr_hidden n_america">
+                            <div id="NA" class="accr_hidden n_america accr_content">
                                 <ul>
                                     <li>
                                         <img class="flag" src="assets/us_flag.png" alt="usa">
-                                        <input type="checkbox" name="" id="usa"  checked="false" class="checkboxes">
+                                        <input type="checkbox" name="" id="usa"  class="checkboxes">
                                         <label class="label" for="usa"> USA </label>
                                     </li>
                                     <li>
                                         <img class="flag" src="assets/mexico_flag.png" alt="mexico">
-                                        <input type="checkbox" name="" id="mexico" checked="false" class="checkboxes">
+                                        <input type="checkbox" name="" id="mexico" class="checkboxes">
                                         <label class="label" for="mexico"> Mexico</label>
                                     </li>
                                     <li>
                                         <img class="flag" src="assets/haiti_flag.png" alt="haiti">
-                                        <input type="checkbox" name="" id="haiti" checked="false" class="checkboxes">
+                                        <input type="checkbox" name="" id="haiti" class="checkboxes">
                                         <label class="label" for="haiti"> Haiti</label>
                                     </li>
                                     <li>
                                         <img class="flag" src="assets/canada_flag.png" alt="canada">
-                                        <input type="checkbox" name="" id="canada" checked="false" class="checkboxes">
+                                        <input type="checkbox" name="" id="canada" class="checkboxes">
                                         <label class="label" for="canada"> Canada</label>
                                     </li>
                                     <li>
                                         <img class="flag" src="assets/cuba_flag.png" alt="cuba">
-                                        <input type="checkbox" name="" id="cuba" checked="false" class="checkboxes">
+                                        <input type="checkbox" name="" id="cuba" class="checkboxes">
                                         <label class="label" for="cuba"> Cuba</label>
                                     </li>
                                     <li>
                                         <img class="flag" src="assets/jamaica_flag.jpg" alt="jamaica">
-                                        <input type="checkbox" name="" id="jamaica" checked="false" class="checkboxes">
+                                        <input type="checkbox" name="" id="jamaica" class="checkboxes">
                                         <label class="label" for="jamaica"> Jamaica</label>
                                     </li>
                                 </ul>
                             </div>
                             <button id="south_america" class="accr_button">South America <i class="fa fa-angle-double-down fa-2x down_arrow" aria-hidden="true"></i>
                             </button>
-                            <div id="SA" class="accr_hidden s_america">
+                            <div id="SA" class="accr_hidden s_america accr_content">
                                 <ul>
                                     <li>
                                         <img class="flag" src="assets/argentina_flag.jpg" alt="argentina" >
-                                        <input type="checkbox" name="" id="argentina" class="checkboxes" checked="false">
+                                        <input type="checkbox" name="" id="argentina" class="checkboxes" >
                                         <label class="label" for="argentina"> Argentina</label>
                                     </li>
                                     <li>
                                         <img class="flag" src="assets/brazil_flag.png" alt="brazil" >
-                                        <input type="checkbox" name="" id="brazil" checked="false" class="checkboxes" >
+                                        <input type="checkbox" name="" id="brazil"  class="checkboxes" >
                                         <label class="label" for="brazil"> Brazil</label>
                                     </li>
                                     <li>
                                         <img class="flag" src="assets/chile_flag.png" alt="Chile" >
-                                        <input type="checkbox" name="" id="chile" class="checkboxes" checked="false" >
+                                        <input type="checkbox" name="" id="chile" class="checkboxes"  >
                                         <label class="label" for="chile"> Chile</label>
                                     </li>
                                 </ul>
                             </div>
                             <button id="europe" class="accr_button">Europe <i class="fa fa-angle-double-down down_arrow fa-2x" aria-hidden="true"></i>
                             </button>
-                            <div id="EU" class="accr_hidden europe">
+                            <div id="EU" class="accr_hidden europe accr_content">
                                 <ul>
                                     <li>
                                         <img class="flag" src="assets/germany_flag.png" alt="germany">
-                                        <input type="checkbox" name="" id="germany" checked="false" class="checkboxes">
+                                        <input type="checkbox" name="" id="germany" class="checkboxes">
                                         <label class="label" for="germany"> Germany</label>
                                     </li>
                                     <li>
                                         <img class="flag" src="assets/uk_flag.png" alt="UK">
-                                        <input type="checkbox" name="" id="uk" checked="false" class="checkboxes">
+                                        <input type="checkbox" name="" id="uk" class="checkboxes">
                                         <label class="label" for="uk">United Kingdom</label>
                                     </li>
                                     <li>
                                         <img class="flag" src="assets/italy_flag.png" alt="Italy">
-                                        <input type="checkbox" name="" id="italy" checked="false " class="checkboxes">
+                                        <input type="checkbox" name="" id="italy"  class="checkboxes">
                                         <label class="label" for="italy"> Italy</label>
                                     </li>
                                 </ul>
                             </div>
                             <button id="africa" class="accr_button">Africa <i class="fa fa-angle-double-down fa-2x down_arrow" aria-hidden="true"></i>
                             </button>
-                            <div id="AF" class="accr_hidden africa">
+                            <div id="AF" class="accr_hidden africa accr_content">
                                 <ul>
                                     <li>
                                         <img class="flag" src="assets/kenya_flag.jpg" alt="kenya">
-                                        <input type="checkbox" name="" id="kenya" checked="false " class="checkboxes">
+                                        <input type="checkbox" name="" id="kenya"  class="checkboxes">
                                             <label class="label" for="kenya">Kenya</label>
                                     </li>
                                     <li>
                                         <img class="flag" src="assets/egypt_flag.png" alt="egypt">
-                                        <input type="checkbox" name="" id="egypt" checked="false " class="checkboxes">
+                                        <input type="checkbox" name="" id="egypt"  class="checkboxes">
                                             <label class="label" for="egypt">Egypt</label>
                                     </li>
                                     <li>
                                         <img class="flag" src="assets/algeria_flag.png" alt="Algeria">
-                                        <input type="checkbox" name="" id="algeria" checked="false " class="checkboxes">
+                                        <input type="checkbox" name="" id="algeria"  class="checkboxes">
                                             <label class="label" for="algeria">Algeria</label>
                                     </li>
                                 </ul>
                             </div>
                             <button id="oceania" class="accr_button">Australia <i class="fa fa-angle-double-down fa-2x down_arrow" aria-hidden="true"></i>
                             </button>
-                            <div id="OC" class="accr_hidden oceania">
+                            <div id="OC" class="accr_hidden oceania accr_content">
                                 <ul>
                                     <li>
                                         <img class="flag" src="assets/australia_flag.png" alt="australia">
-                                        <input type="checkbox" name="" id="australia" checked="false" class="checkboxes">
+                                        <input type="checkbox" name="" id="australia"  class="checkboxes">
                                         <label class="label" for="australia">Australia</label>
                                     </li>
                                     <li>
                                         <img class="flag" src="assets/fiji_flag.png" alt="fiji">
-                                        <input type="checkbox" name="" id="fiji" checked="false" class="checkboxes">
+                                        <input type="checkbox" name="" id="fiji"  class="checkboxes">
                                         <label class="label" for="fiji">Fiji</label>
                                     </li>
                                     <li>
                                         <img class="flag" src="assets/newzealand_flag.png" alt="newzealand">
-                                        <input type="checkbox" name="" id="newzealand" checked="false" class="checkboxes">
+                                        <input type="checkbox" name="" id="newzealand" class="checkboxes">
                                         <label class="label" for="newzealand">New Zealand</label>
                                     </li>
                                 </ul>
                             </div>
                         </div>
-                        <button class="sign_up">Sign Up</button>
+                        <div class="form_footer">
+                            <button id="sign_up" class="sign_up">Sign Up</button>
                         <button class="sign_up">Sign Up
                             <p>AND MAKE A REQUEST</p>
                         </button>
@@ -474,6 +508,7 @@
                             <p>
                                 <a class="already_login" href="">Log in Here</a>
                             </p>
+                        </div>
                         </div>
                     </section>
                 </form>
@@ -554,7 +589,7 @@
                     </section>
                     <section>
                         <h3> What people say about us</h3>
-                        <img class="thumbnail" src="assets/thumbnail.jpg">
+                        <img class="thumbnail" src="assets/Page-Business.jpeg">
                         <h4>100 brugere er registreret</h4>
                         <p>10. Marts 2014</p>
                         <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
